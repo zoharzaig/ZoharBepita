@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="20dp">
+
+        <ImageButton
+            android:id="@+id/navigation_bar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/black"
+            android:onClick="showNavigationMenu"
+            android:src="@drawable/ic_baseline_menu_24" />
+
+
+        <TextView
+            android:id="@+id/txtZoharBetaco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:fontFamily="@font/chimichanga"
+            android:text="Zohar BeTaco"
+            android:textColor="@color/black"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/mexicanicon" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOLA! Come dine with us at the best mexican in town"
+        android:textColor="@color/black"
+        android:fontFamily="@font/chimichanga"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:paddingBottom="70dp"/>
+
+    <ImageView
+        android:id="@+id/me_with_simbrero_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:src="@drawable/me_with_sombrero" />
+
+
+</LinearLayout>

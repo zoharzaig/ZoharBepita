@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="20dp">
+
+            <ImageButton
+                android:id="@+id/navigation_bar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="showNavigationMenu"
+                android:src="@drawable/ic_baseline_menu_24"
+                android:background="@color/black"/>
+
+            <TextView
+                android:id="@+id/txtZoharBetaco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:fontFamily="@font/chimichanga"
+                android:text="Zohar BeTaco"
+                android:textColor="@color/black"
+                android:textSize="35sp" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/mexicanicon" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtReserveAseat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chimichanga"
+            android:text="Reserve a seat"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginLeft="20dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:columnCount="1"
+            android:columnOrderPreserved="false"
+            android:rowCount="3">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number of gueats"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/laviniax"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="15dp">
+
+                        <Button
+                            android:id="@+id/decreamentButton"
+                            android:text="-"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                            android:onClick="decrementNumOfPeople"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/laviniax"
+                            android:id="@+id/num_of_people_display"/>
+
+                        <Button
+                            android:id="@+id/incrementButton"
+                            android:text="+"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                            android:onClick="incrementNumOfPeople"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time for reservation"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/laviniax"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop= "10dp"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:id="@+id/time_display"
+                            tools:text="@tools:sample/date/ddmmyy"
+                            android:fontFamily="@font/laviniax" />
+
+                        <Button
+                            android:id="@+id/reservation_time"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/day_icon"
+                            android:fontFamily="@font/laviniax"
+                            android:gravity="center"
+                            android:hint="Tap me to select"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:layout_margin="10dp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Any specific diet?"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/laviniax" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="15dp">
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:background="@color/white">
+
+                            <RadioButton
+                                android:id="@+id/radio_vegan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Vegan"
+                                android:padding="10dp"
+                                android:fontFamily="@font/laviniax"
+                                android:textColor="@color/black"
+                                android:buttonTint="@color/black"/>
+
+                            <RadioButton
+                                android:id="@+id/radio_vegetarian"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Vegetarian"
+                                android:padding="10dp"
+                                android:fontFamily="@font/laviniax"
+                                android:textColor="@color/black"
+                                android:buttonTint="@color/black"/>
+
+                            <RadioButton
+                                android:id="@+id/radio_non"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="non"
+                                android:padding="10dp"
+                                android:fontFamily="@font/laviniax"
+                                android:textColor="@color/black"
+                                android:buttonTint="@color/black"/>
+
+
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preferred paying method"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/laviniax" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="15dp">
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_credit_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Credit Card"
+                                android:padding="10dp"
+                                android:fontFamily="@font/laviniax"
+                                android:textColor="@color/black"
+                                android:buttonTint="@color/black"/>
+
+                            <RadioButton
+                                android:id="@+id/radio_cash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Cash"
+                                android:padding="10dp"
+                                android:fontFamily="@font/laviniax"
+                                android:textColor="@color/black"
+                                android:buttonTint="@color/black"/>
+
+                            <RadioButton
+                                android:id="@+id/radio_credit_hugs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Hugs"
+                                android:padding="10dp"
+                                android:fontFamily="@font/laviniax"
+                                android:textColor="@color/black"
+                                android:buttonTint="@color/black"/>
+
+
+                        </RadioGroup>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="@color/white">
+
+                    <Button
+                        android:id="@+id/send_reservstion_button"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        android:background="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Send Reservation"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/laviniax"
+                        android:layout_gravity="center"
+                        />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
